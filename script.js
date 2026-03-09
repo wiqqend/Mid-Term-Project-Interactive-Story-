@@ -24,8 +24,15 @@ const creditsSpan  = document.getElementById("creditsSpan");
 const healthBar    = document.getElementById("healthBar");
 
 // State variables
-let hasCode = false;
-let inventory = [];
+let currentScene = "town_entrance";
+let hasRealCode  = false;   // found real safe combo upstairs
+let hasFakeCode  = false;   // bought fake combo from the shady guy
+let inventory    = [];
+let credits      = 500;
+let health       = 100;
+
+const REAL_CODE  = "7421";  // the actual vault combination
+const FAKE_CODE  = "1234";  // the combination sold by the shady guy
 
 // Functions
 function updateStory(text1, text2, text3) {
