@@ -1,5 +1,5 @@
 
-// Element references
+// element references
 const paragraph1   = document.getElementById("paragraph1");
 const paragraph2   = document.getElementById("paragraph2");
 const paragraph3   = document.getElementById("paragraph3");
@@ -23,7 +23,7 @@ const healthSpan   = document.getElementById("healthSpan");
 const creditsSpan  = document.getElementById("creditsSpan");
 const healthBar    = document.getElementById("healthBar");
 
-// State variables
+// variables
 let currentScene = "town_entrance";
 let hasRealCode  = false;   // found real safe combo upstairs
 let hasFakeCode  = false;   // bought fake combo from the shady guy
@@ -34,26 +34,39 @@ let health       = 100;
 const REAL_CODE  = "7421";  // the actual vault combination
 const FAKE_CODE  = "1234";  // the combination sold by the shady guy
 
-// Functions
-function updateStory(text1, text2, text3) {
-    paragraph1.textContent = text1;
-    paragraph2.textContent = text2;
-    paragraph3.textContent = text3;
+
+//  SCENE DATA (null = no button)
+const scenes = {
+
+    // TOWN ENTRANCE
+    town_entrance: {
+        texts: [
+            "You drift into town, neon signs flickering above dusty wood walls.",
+            "Wanted posters glitch in the wind. Your laser revolver at your hip.",
+            "The town is infront, Where do you head?"
+        ],
+        image:   "townentrance.png",
+        tooltip: "Neon Rust, Population: 347",
+        north:   "Go to the Bank",
+        south:   "Go to the Saloon",
+        east:    "Ride Past the Town",
+        back:    null
+    },
+
+    bank: {
+        texts: [
+            "The bank hums of machines and old coin sorters.",
+            "A teller counts quantum chips behind the counter.",
+            "A small crater near the safe."
+        ],
+        image:   "Bank1.png",
+        tooltip: "Bank of Neon Rust",
+        north:   "Talk to the Teller",
+        south:   null,
+        east:    null,
+        back:    "Leave the Bank"
+    },
+
+
+
 }
-
-function changeImage(src) {
-    mainImage.src = src;
-}   
-
-function checkSafe() {
-    if (safeInput.value === "1234") {
-        updateStory("The safe opens", "Inside you find some cash", "You add the cash to your inventory.");
-        inventory.push("1000$");
-        
-    } else {
-        updateStory("The safe is locked.", "Maybe you need to find a  code?");
-    }}
-
-// Event listeners
-
-
