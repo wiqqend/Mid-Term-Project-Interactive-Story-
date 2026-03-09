@@ -79,6 +79,20 @@ const scenes = {
         east:    null,
         back:    "Step Back"
     },
+    bank_hostage: {
+        texts: [
+            "You draw your laser revolver. 'Everyone on the floor NOW!'",
+            "",  // filled in by go to scene function
+            "Enter the 4-digit vault combination and crack the safe."
+        ],
+        image:   "bank2.jpg",
+        tooltip: "The safe. This is your one shot",
+        north:   null,
+        south:   null,
+        east:    null,
+        back:    "Abort the Robbery",
+        showSafe: true
+    },   
 
 
 
