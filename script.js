@@ -1,15 +1,27 @@
 
 // Element references
-const paragraph1 = document.getElementById("paragraph1");
-const paragraph2 = document.getElementById("paragraph2");
-const paragraph3 = document.getElementById("paragraph3");
+const paragraph1   = document.getElementById("paragraph1");
+const paragraph2   = document.getElementById("paragraph2");
+const paragraph3   = document.getElementById("paragraph3");
+const mainImage    = document.getElementById("mainimage");
+const tooltip      = document.getElementById("tooltip");
+const gameTitle    = document.getElementById("gameTitle");
 
-const northButton = document.getElementById("northbutton");
-const southButton = document.getElementById("southbutton");
-const eastButton = document.getElementById("eastbutton");
-const backButton = document.getElementById("backbutton");
-const mainImage = document.getElementById("mainimage");
-const safeInput = document.getElementById("safeinput");
+const northButton  = document.getElementById("northbutton");
+const southButton  = document.getElementById("southbutton");
+const eastButton   = document.getElementById("eastbutton");
+const backButton   = document.getElementById("backbutton");
+const submitButton = document.getElementById("submitButton");
+const reviewButton = document.getElementById("reviewButton");
+const clearLogBtn  = document.getElementById("clearLogBtn");
+
+const safeInput    = document.getElementById("safeinput");
+const safeSection  = document.getElementById("safeSection");
+const inventoryList = document.getElementById("inventoryList");
+const logArea      = document.getElementById("logArea");
+const healthSpan   = document.getElementById("healthSpan");
+const creditsSpan  = document.getElementById("creditsSpan");
+const healthBar    = document.getElementById("healthBar");
 
 // State variables
 let hasCode = false;
@@ -36,4 +48,5 @@ function checkSafe() {
     }}
 
 // Event listeners
+
 
