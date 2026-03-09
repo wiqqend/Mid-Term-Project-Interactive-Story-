@@ -92,7 +92,35 @@ const scenes = {
         east:    null,
         back:    "Abort the Robbery",
         showSafe: true
-    },   
+    },  
+    saloon: {
+        texts: [
+            "The Saloon reeks of whiskey and old leather.",
+            "A piano plays in the corner. A shady figure nurses a drink and watches you.",
+            "What do you do?"
+        ],
+        image:   "saloon1.png",
+        tooltip: "The Dusty Saloon",
+        north:   "Get a Drink",
+        south:   "Talk to the Guy in the Corner",
+        east:    "Investigate a Noise Upstairs",
+        back:    "Head Back Outside"
+    },
+
+    corner_guy: {
+        texts: [
+            "The figure leans close. Augmented eye looking at you",
+            "'I know the bank vault combination,' he rasps. 'Two hundred and it's yours.'",
+            "Do you trust him?"
+        ],
+        image:   "saloon1.png",
+        tooltip: "Shady Character, He knows something",
+        north:   "Give Him 200 Credits",
+        south:   "Run Away",
+        east:    null,
+        back:    "Back to the Bar"
+    },
+
 
 
 
