@@ -66,6 +66,20 @@ const scenes = {
         east:    null,
         back:    "Leave the Bank"
     },
+    talk_teller: {
+        texts: [
+            "'What you need, stranger?' the teller asks.",
+            "Behind her, the safe is made of thick steel with a 4-digit combination lock.",
+            "Deposit your credits citizen... or make this more interesting."
+        ],
+        image:   "Bank1.png",
+        tooltip: "The Safe, one wrong move...",
+        north:   "Deposit Some Cash",
+        south:   "Hold the Teller Hostage",
+        east:    null,
+        back:    "Step Back"
+    },
+
 
 
 
