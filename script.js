@@ -121,6 +121,19 @@ const scenes = {
         back:    "Back to the Bar"
     },
 
+    after_fake_code: {
+        texts: [
+            "He takes your credits and slides a scrap of paper across the bar: 1-2-3-4.",
+            "'Trust me, pardner,' he winks.",
+            "What now?"
+        ],
+        image:   "saloon1.png",
+        tooltip: "That code looks familiar...",
+        north:   "Head to the Bank",
+        south:   "Ask Him About the Code Again",
+        east:    null,
+        back:    "Back to the Bar"
+    },
 
 
 
