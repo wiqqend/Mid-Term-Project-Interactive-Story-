@@ -176,5 +176,20 @@ const scenes = {
         back:    "Head Back Down"
     },
 
+    found_real_code: {
+        texts: [
+            "You pull the drawer open and dig through papers.",
+            "A handwritten note. 'Safe combo  7-4-2-1.  Deputy Alex Freiders'",
+            "I wonder what I can use this on?"
+        ],
+        image:   "saloon1.png",   // swap to drawer1.png 
+        tooltip: "I wonder what this is for",
+        north:   "Head to the Bank",
+        south:   null,
+        east:    null,
+        back:    "Back to the Room"
+    },
+
+
 
 }
