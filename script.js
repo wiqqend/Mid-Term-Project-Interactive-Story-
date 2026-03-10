@@ -398,3 +398,22 @@ function showButtons(config) {
     safeSection.style.display = config.showSafe ? "block" : "none";
     if (config.showSafe) safeInput.value = "";
 }
+
+function reviewInventory() {
+
+}
+
+
+function checkSafe() {
+
+}
+
+
+function goToScene(sceneName) {
+
+}
+
+function resetGame() {
+
+
+}
