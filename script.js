@@ -685,3 +685,14 @@ clearLogBtn.addEventListener("click", function() {
     logArea.innerHTML = "";
     addToLog("Log cleared.");
 });
+
+
+window.addEventListener("load", function() {
+    gameTitle.style.transform = "scale(0.9)";
+    gameTitle.style.opacity = "0";
+    gameTitle.style.transition = "transform 0.8s ease, opacity 0.8s ease";
+    setTimeout(function() {
+        gameTitle.style.transform = "scale(1)";
+        gameTitle.style.opacity = "1";
+    }, 100);
+});
