@@ -311,3 +311,11 @@ function changeImage(src) {
         mainImage.style.opacity = "1";
     }, 250);
 }
+
+
+
+
+//  INITIALIZE GAME
+
+goToScene("town_entrance");
+addToLog("You arrived in Neon Rust. Population: 347.");
