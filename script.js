@@ -427,6 +427,19 @@ function goToScene(sceneName) {
 }
 
 function resetGame() {
+    currentScene = "town_entrance";
+    hasRealCode  = false;
+    hasFakeCode  = false;
+    inventory    = [];
+    credits      = 500;
+    health       = 100;
 
+    inventoryList.innerHTML = " ( empty bag ) ";
+    logArea.innerHTML = "";
+    creditsSpan.textContent = "500";
+    updateHealth(0)
+
+    goToScene("town_entrance")
+    addToLog("New game started. Welcome Back")
 
 }
