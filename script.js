@@ -355,11 +355,6 @@ function updateCredits(x) {
 }
 
 
-//  INITIALIZE GAME
-
-goToScene("town_entrance");
-addToLog("You arrived in Neon Rust. Population: 347.");
-
 
 // Function For add/removing buttons
 function showButtons(config) {
@@ -696,3 +691,9 @@ window.addEventListener("load", function() {
         gameTitle.style.opacity = "1";
     }, 100);
 });
+
+
+//  INITIALIZE GAME
+
+goToScene("town_entrance");
+addToLog("You arrived in Neon Rust. Population: 347.");
