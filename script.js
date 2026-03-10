@@ -256,4 +256,15 @@ const scenes = {
         tooltip: "Ending 3, The Heist"
     },
 
+    ending_drunk_robbed: {
+        isEnding: true,
+        endingType: "bad",
+        texts: [
+            "Three glasses of moonshine later...",
+            "You slump against the counter and close your eyes ",
+            "GAME OVER: You wake up in an alley. Credits, horse, and revolver gone. Robbed while passed out drunk."
+        ],
+        image:   "saloon1.png",
+        tooltip: "Ending 4, Robbed While Drunk"
+    },
 }
