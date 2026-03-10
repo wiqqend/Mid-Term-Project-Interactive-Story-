@@ -519,7 +519,7 @@ function resetGame() {
 
 //  EVENT LISTENERS 
 
-northButton.addEventListener("click", () => {
+northButton.addEventListener("click", function() {
     if (currentScene === "town_entrance")    goToScene("bank");
     else if (currentScene === "bank")        goToScene("talk_teller");
     else if (currentScene === "talk_teller") goToScene("ending_robbed_teller");
@@ -544,7 +544,7 @@ northButton.addEventListener("click", () => {
     else if (currentScene === "keep_riding")      goToScene("saloon");
 });
 
-southButton.addEventListener("click", () => {
+southButton.addEventListener("click", function() {
     if (currentScene === "town_entrance")    goToScene("saloon");
     else if (currentScene === "talk_teller") {
         goToScene("bank_hostage");
@@ -564,13 +564,13 @@ southButton.addEventListener("click", () => {
     }
 });
 
-eastButton.addEventListener("click", () => {
+eastButton.addEventListener("click", function() {
     if (currentScene === "town_entrance") goToScene("ride_past");
     else if (currentScene === "saloon")   goToScene("upstairs_hall");
     else if (currentScene === "ride_past") goToScene("keep_riding");
 });
 
-backButton.addEventListener("click", () => {
+backButton.addEventListener("click", function() {
     if (currentScene === "game_over" || document.body.classList.contains("ending-bad") || document.body.classList.contains("ending-good")) {
         resetGame();
         return;
@@ -594,25 +594,23 @@ backButton.addEventListener("click", () => {
     else resetGame(); 
 });
 
-
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", function() {
     checkSafe();
 });
 
-reviewButton.addEventListener("click", () => {
+reviewButton.addEventListener("click", function() {
     reviewInventory();
 });
 
-mainImage.addEventListener("mouseover", () => {
+mainImage.addEventListener("mouseover", function() {
     tooltip.style.display = "block";
 });
 
-mainImage.addEventListener("mouseout", () => {
+mainImage.addEventListener("mouseout", function() {
     tooltip.style.display = "none";
 });
 
-
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", function(event) {
     switch (event.key) {
         case "ArrowUp":
             event.preventDefault();
@@ -638,4 +636,12 @@ document.addEventListener("keydown", (event) => {
             if (currentScene === "bank_hostage") checkSafe();
             break;
     }
+});
+
+safeInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") checkSafe();
+});
+
+safeInput.addEventListener("input", function() {
+    safeInput.value = safeInput.value.replace(/\D/g, "");
 });
