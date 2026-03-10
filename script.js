@@ -369,6 +369,28 @@ function showButtons(config) {
     } else {
         northButton.classList.add("hidden");
     }
-
-
+    // south
+    if (config.south) {
+        southButton.textContent = config.south;
+        southButton.classList.remove("hidden");
+    } else {
+        southButton.classList.add("hidden");
+    }
+    // east
+    if (config.east) {
+        eastButton.textContent = config.east;
+        eastButton.classList.remove("hidden");
+    } else {
+        eastButton.classList.add("hidden");
+    }
+    // back
+    if (config.back) {
+        backButton.textContent = config.back;
+        backButton.classList.remove("hidden");
+    } else if (config.showRestartBack) {
+        backButton.textContent = "Play Again";
+        backButton.classList.remove("hidden");
+    } else {
+        backButton.classList.add("hidden");
+    }
 }
