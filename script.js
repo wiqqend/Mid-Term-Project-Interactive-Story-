@@ -244,5 +244,16 @@ const scenes = {
         image:   "bank2.jpg",
         tooltip: "Ending 2. Shot at the Safe"
     },
+    ending_escaped: {
+        isEnding: true,
+        endingType: "good",
+        texts: [
+            "The vault swings open. Inside: stacks of quantum credits.",
+            "You fill your bag, and walk out the back.",
+            "ENDING UNLOCKED: THE HEIST. You escaped Neon Rust"
+        ],
+        image:   "bank2.jpg",
+        tooltip: "Ending 3, The Heist"
+    },
 
 }
