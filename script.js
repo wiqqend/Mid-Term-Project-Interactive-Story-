@@ -135,7 +135,32 @@ const scenes = {
         back:    "Back to the Bar"
     },
 
+    upstairs_hall: {
+        texts: [
+            "You creak up the staircase, hand resting on your revolver",
+            "At the end of the hall a door flickers with pale amber light. Something shuffles behind it.",
+            "Do you open it?"
+        ],
+        image:   "saloon1.png",   // swap to upstairs1.png 
+        tooltip: "Upstairs Hall — Something is up here",
+        north:   "Open the Door",
+        south:   null,
+        east:    null,
+        back:    "Head Back Downstairs"    },
 
+    upstairs_room: {
+        texts: [
+            "You ease the door open. Empty.",
+            "A used bed, a flickering lamp, and a desk with a drawer left ajar.",
+            "You could rent the room officially... or just search the desk now."
+        ],
+        image:   "saloon1.png",   // swap to upstairs1.png when you have it
+        tooltip: "Empty Room, or is it?",
+        north:   "Ask the Bartender for the Room (50 Credits)",
+        south:   "Open the Drawer",
+        east:    null,
+        back:    "Back to the Hall"
+    },
 
 
 }
