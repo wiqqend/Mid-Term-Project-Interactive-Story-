@@ -229,7 +229,7 @@ const scenes = {
             "CRACK... Something cold and hard hits the back of your skull.",
             "GAME OVER: Robbed and killed while depositing credits"
         ],
-        image:   "Bank1.png",
+        image:   "Bank2.png",
         tooltip: "Ending 1, Robbed at Gunpoint"
     },
 
@@ -252,7 +252,7 @@ const scenes = {
             "You fill your bag, and walk out the back.",
             "ENDING UNLOCKED: THE HEIST. You escaped Neon Rust"
         ],
-        image:   "bank2.jpg",
+        image:   "bank3.jpg",
         tooltip: "Ending 3, The Heist"
     },
 
