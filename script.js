@@ -358,3 +358,17 @@ function updateCredits(x) {
 
 goToScene("town_entrance");
 addToLog("You arrived in Neon Rust. Population: 347.");
+
+
+// Function For add/removing buttons
+function showButtons(config) {
+    // north
+    if (config.north) {
+        northButton.textContent = config.north;
+        northButton.classList.remove("hidden");
+    } else {
+        northButton.classList.add("hidden");
+    }
+
+
+}
