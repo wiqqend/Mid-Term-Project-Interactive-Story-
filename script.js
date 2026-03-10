@@ -334,6 +334,19 @@ function addToLog(entry) {
     logArea.appendChild(p);
 }
 
+function updateHealth(x) {
+    health = Math.max(0, Math.min(100, health + x));
+    healthSpan.textContent = health;
+    healthBar.style.width = health + "%";
+
+    if (health < 30) {
+        healthBar.style.backgroundColor = "rgb(255, 0, 0)";
+    } else if (health < 60) {
+        healthBar.style.backgroundColor = "rgb(255, 255, 0)";
+    } else {
+        healthBar.style.backgroundColor = "rgb(0, 255, 0)";
+    }
+}
 
 //  INITIALIZE GAME
 
