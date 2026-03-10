@@ -451,7 +451,52 @@ function checkSafe() {
 }
 
 function goToScene(sceneName) {
+    const scene = scenes[sceneName];
+    if (!scene) { console.warn("Unknown scene:", sceneName); return; }
 
+    currentScene = sceneName;
+
+   
+    if (sceneName === "bank_hostage") {
+        if (hasRealCode) {
+            scene.texts[1] = "You have the real combination: " + REAL_CODE;
+        } else if (hasFakeCode) {
+            scene.texts[1] = "You have a code you bought: " + FAKE_CODE;
+        } else {
+            scene.texts[1] = "You don't have the combination.";
+        }
+    }
+
+   
+    if (sceneName === "ask_room" && credits >= 50) {
+        updateCredits(-50);
+        addToLog("Paid 50 credits for a room at the saloon.");
+    }
+
+    updateStory(...scene.texts);
+    changeImage(scene.image);
+    tooltip.textContent = scene.tooltip;
+
+    // Handle endings
+    if (scene.isEnding) {
+        showButtons({ showRestartBack: true });
+        document.body.className = scene.endingType === "good" ? "ending-good" : "ending-bad";
+        addToLog((scene.endingType === "good" ? "Winner" : "Dead") + " " + scene.tooltip);
+        return;
+    }
+
+    // Reset body class for non-endings
+    document.body.className = "";
+
+    showButtons({
+        north:    scene.north,
+        south:    scene.south,
+        east:     scene.east,
+        back:     scene.back,
+        showSafe: scene.showSafe || false
+    });
+
+    addToLog("Entered: " + sceneName.replace(/_/g, " "));
 }
 
 function resetGame() {
