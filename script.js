@@ -393,4 +393,8 @@ function showButtons(config) {
     } else {
         backButton.classList.add("hidden");
     }
+
+    // safe input
+    safeSection.style.display = config.showSafe ? "block" : "none";
+    if (config.showSafe) safeInput.value = "";
 }
