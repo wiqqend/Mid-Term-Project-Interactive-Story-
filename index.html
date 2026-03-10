@@ -21,6 +21,29 @@
         <p id="paragraph2" class="story-text">An alternate reality with cyber on the frontier.</p>
         <p id="paragraph3" class="story-text">What will you do?</p>
 
+    <!-- navigation buttons -->
+        <div class="controls-area">
+            <div class="button-row" id="directionButtons">
+                <button id="northbutton" class="btn btn-north"> North </button>
+                <button id="southbutton" class="btn btn-south"> South </button>
+                <button id="eastbutton"  class="btn btn-east"> East </button>
+                <button id="backbutton"  class="btn btn-back"> Back</button>
+                    
+            </div>
+
+    <!-- vault input -->
+            <div class="safe-section" id="safeSection" style="display:none;">
+                <div class="safe-panel">
+                    <label class="safe-label"> VAULT COMBINATION </label>
+                    <div class="safe-input-row">
+                        <input type="text" id="safeinput" class="safe-input"
+                            maxlength="4" placeholder="_ _ _ _">
+                        <button id="submitButton" class="btn btn-submit">OPEN SAFE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <script src="script.js" defer></script>
 </body>
 </html>
