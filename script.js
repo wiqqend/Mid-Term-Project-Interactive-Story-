@@ -348,6 +348,12 @@ function updateHealth(x) {
     }
 }
 
+function updateCredits(x) {
+    credits = Math.max(0, credits + x);
+    creditsSpan.textContent = credits;
+}
+
+
 //  INITIALIZE GAME
 
 goToScene("town_entrance");
