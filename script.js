@@ -221,7 +221,7 @@ const scenes = {
 
 // ENDINGS DATA
 
-ending_robbed_teller: {
+    ending_robbed_teller: {
         isEnding: true,
         endingType: "bad",
         texts: [
@@ -232,3 +232,17 @@ ending_robbed_teller: {
         image:   "Bank1.png",
         tooltip: "Ending 1, Robbed at Gunpoint"
     },
+
+    ending_shot_safe: {
+        isEnding: true,
+        endingType: "bad",
+        texts: [
+            "The wrong code triggers a silent alarm.",
+            "Three laser sights appear on your chest.",
+            "GAME OVER: Deputies shot you from behind the filing cabinets."
+        ],
+        image:   "bank2.jpg",
+        tooltip: "Ending 2. Shot at the Safe"
+    },
+
+}
