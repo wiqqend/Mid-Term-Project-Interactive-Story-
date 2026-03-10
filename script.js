@@ -645,3 +645,24 @@ safeInput.addEventListener("keydown", function(event) {
 safeInput.addEventListener("input", function() {
     safeInput.value = safeInput.value.replace(/\D/g, "");
 });
+
+paragraph1.addEventListener("click", function() {
+    if (paragraph1.textContent) {
+        paragraph1.style.color = "#f0c060";
+        setTimeout(function() { paragraph1.style.color = ""; }, 800);
+    }
+});
+
+paragraph2.addEventListener("click", function() {
+    if (paragraph2.textContent) {
+        paragraph2.style.color = "#f0c060";
+        setTimeout(function() { paragraph2.style.color = ""; }, 800);
+    }
+});
+
+paragraph3.addEventListener("click", function() {
+    if (paragraph3.textContent) {
+        paragraph3.style.color = "#f0c060";
+        setTimeout(function() { paragraph3.style.color = ""; }, 800);
+    }
+});
