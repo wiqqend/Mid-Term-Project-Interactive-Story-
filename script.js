@@ -267,4 +267,27 @@ const scenes = {
         image:   "saloon1.png",
         tooltip: "Ending 4, Robbed While Drunk"
     },
-}
+
+    ending_shot_back: {
+        isEnding: true,
+        endingType: "bad",
+        texts: [
+            "You turn to leave. The shady figure watches you go.",
+            "A laser bolt hits you between the shoulder blades.",
+            "GAME OVER: You should never have gone back. Shot in the back."
+        ],
+        image:   "saloon1.png",
+        tooltip: "Ending 5, Shot in the Back"
+    },
+    ending_bear: {
+        isEnding: true,
+        endingType: "bad",
+        texts: [
+            "You make camp in a dry ravine.",
+            "A bear comes out of the darkness.",
+            "GAME OVER: The last thing you hear is jaws snapping shut."
+        ],
+        image:   "exit1.png",
+        tooltip: "Ending 6, Eaten by a Bear"
+    }
+};
