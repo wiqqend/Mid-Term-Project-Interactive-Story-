@@ -421,8 +421,24 @@ function checkSafe() {
     const entered = safeInput.value;
     
     if (entered === ""){
-        updateStory("You hesitate", "Enter the 4 digit code", "")
+        updateStory("You hesitate", "Enter the 4 digit code", "");
         return;
+    }
+    if (entered === REAL_CODE){
+        updateStory("The lock clicks open", "Inside you find 10,000 quatum credits.", "");
+        updateCredits(10000);
+        goToScene("ending_escaped");
+    }
+    if (entered === FAKE_CODE){
+        updateStory("The lock does not move", "", "");
+        updateHealth(0);
+        goToScene("after_fake_code");
+    }
+    if (entered != "" || entered != REAL_CODE || entered != FAKE_CODE){
+        updateStory("The lock does not move","","");
+        updateHealth(0)
+        goToScene("ending_shot_safe")
+        
     }
 }
 
