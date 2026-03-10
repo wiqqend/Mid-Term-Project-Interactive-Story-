@@ -516,3 +516,80 @@ function resetGame() {
     addToLog("New game started. Welcome Back")
 
 }
+
+//  EVENT LISTENERS 
+
+northButton.addEventListener("click", () => {
+    if (currentScene === "town_entrance")    goToScene("bank");
+    else if (currentScene === "bank")        goToScene("talk_teller");
+    else if (currentScene === "talk_teller") goToScene("ending_robbed_teller");
+    else if (currentScene === "saloon")      goToScene("ending_drunk_robbed");
+    else if (currentScene === "corner_guy") {
+        if (credits < 200) {
+            updateStory("You don't have enough credits.", "You need at least 200.", "");
+            return;
+        }
+        updateCredits(-200);
+        hasFakeCode = true;
+        addToInventory("Crumpled Note (Code: 1-2-3-4?)");
+        addToLog("Paid 200 credits to the shady guy.");
+        goToScene("after_fake_code");
+    }
+    else if (currentScene === "after_fake_code") goToScene("bank_hostage");
+    else if (currentScene === "upstairs_hall")   goToScene("upstairs_room");
+    else if (currentScene === "upstairs_room")   goToScene("ask_room");
+    else if (currentScene === "ask_room")         goToScene("found_real_code");
+    else if (currentScene === "found_real_code")  goToScene("bank_hostage");
+    else if (currentScene === "ride_past")        goToScene("ending_bear");
+    else if (currentScene === "keep_riding")      goToScene("saloon");
+});
+
+southButton.addEventListener("click", () => {
+    if (currentScene === "town_entrance")    goToScene("saloon");
+    else if (currentScene === "talk_teller") {
+        goToScene("bank_hostage");
+    }
+    else if (currentScene === "saloon")       goToScene("corner_guy");
+    else if (currentScene === "corner_guy")   goToScene("saloon");      // run away
+    else if (currentScene === "after_fake_code") {
+        addToLog("Went back to ask the corner guy again...");
+        goToScene("ending_shot_back");
+    }
+    else if (currentScene === "upstairs_room") {
+        // open the drawer without paying for the room
+        hasRealCode = true;
+        addToInventory("Deputy's Note (Vault Combo: 7-4-2-1)");
+        addToLog("Found the vault combination in the drawer!");
+        goToScene("found_real_code");
+    }
+});
+
+eastButton.addEventListener("click", () => {
+    if (currentScene === "town_entrance") goToScene("ride_past");
+    else if (currentScene === "saloon")   goToScene("upstairs_hall");
+    else if (currentScene === "ride_past") goToScene("keep_riding");
+});
+
+backButton.addEventListener("click", () => {
+    if (currentScene === "game_over" || document.body.classList.contains("ending-bad") || document.body.classList.contains("ending-good")) {
+        resetGame();
+        return;
+    }
+    const backMap = {
+        bank:            "town_entrance",
+        talk_teller:     "bank",
+        bank_hostage:    "bank",
+        saloon:          "town_entrance",
+        corner_guy:      "saloon",
+        after_fake_code: "saloon",
+        upstairs_hall:   "saloon",
+        upstairs_room:   "upstairs_hall",
+        ask_room:        "upstairs_room",
+        found_real_code: "upstairs_room",
+        ride_past:       "town_entrance",
+        keep_riding:     "town_entrance"
+    };
+    const dest = backMap[currentScene];
+    if (dest) goToScene(dest);
+    else resetGame(); 
+});
