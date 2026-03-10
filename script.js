@@ -302,6 +302,7 @@ function updateStory(text1, text2, text3){
     const area = document.querySelector(".story-text-area");
     area.style.animation = "none";
     area.style.animation = "";
+
 }
 
 function changeImage(src) {
@@ -400,7 +401,19 @@ function showButtons(config) {
 }
 
 function reviewInventory() {
-
+    if (inventory.length === 0){
+        updateStory("Your Bags are empty.",
+            "You have not picked up anything.",
+            "Explore to find items."
+        );
+    return;
+    }
+    let listText = "You have: ";
+    for (let i = 0; i < inventory.length; i++){
+        listText += inventory[i];
+        if (i < inventory.length -1) listText += " - ";
+    }
+    updateStory(listText, "", "Press any to continue")
 }
 
 
