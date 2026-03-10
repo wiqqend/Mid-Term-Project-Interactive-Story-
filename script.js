@@ -610,3 +610,32 @@ mainImage.addEventListener("mouseover", () => {
 mainImage.addEventListener("mouseout", () => {
     tooltip.style.display = "none";
 });
+
+
+document.addEventListener("keydown", (event) => {
+    switch (event.key) {
+        case "ArrowUp":
+            event.preventDefault();
+            if (!northButton.classList.contains("hidden")) northButton.click();
+            break;
+        case "ArrowDown":
+            event.preventDefault();
+            if (!southButton.classList.contains("hidden")) southButton.click();
+            break;
+        case "ArrowRight":
+            event.preventDefault();
+            if (!eastButton.classList.contains("hidden")) eastButton.click();
+            break;
+        case "ArrowLeft":
+            event.preventDefault();
+            if (!backButton.classList.contains("hidden")) backButton.click();
+            break;
+        case "i":
+        case "I":
+            reviewInventory();
+            break;
+        case "Enter":
+            if (currentScene === "bank_hostage") checkSafe();
+            break;
+    }
+});
