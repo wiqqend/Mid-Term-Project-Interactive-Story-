@@ -593,3 +593,20 @@ backButton.addEventListener("click", () => {
     if (dest) goToScene(dest);
     else resetGame(); 
 });
+
+
+submitButton.addEventListener("click", () => {
+    checkSafe();
+});
+
+reviewButton.addEventListener("click", () => {
+    reviewInventory();
+});
+
+mainImage.addEventListener("mouseover", () => {
+    tooltip.style.display = "block";
+});
+
+mainImage.addEventListener("mouseout", () => {
+    tooltip.style.display = "none";
+});
