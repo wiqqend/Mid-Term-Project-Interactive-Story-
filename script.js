@@ -326,6 +326,13 @@ function addToInventory(item) {
     inventoryList.appendChild(li);
 }
 
+// func to add your actions to the log
+function addToLog(entry) {
+    const p = document.createElement("p");
+    p.textContent = "› " + entry;
+    p.className = "log-entry latest";
+    logArea.appendChild(p);
+}
 
 
 //  INITIALIZE GAME
