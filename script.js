@@ -434,7 +434,7 @@ function checkSafe() {
         updateHealth(0);
         goToScene("after_fake_code");
     }
-    if (entered != "" || entered != REAL_CODE || entered != FAKE_CODE){
+    if (entered != "" || REAL_CODE || FAKE_CODE){
         updateStory("The lock does not move","","");
         updateHealth(0)
         goToScene("ending_shot_safe")
