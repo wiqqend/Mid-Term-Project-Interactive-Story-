@@ -219,4 +219,16 @@ const scenes = {
     },
 
 
-}
+// ENDINGS DATA
+
+ending_robbed_teller: {
+        isEnding: true,
+        endingType: "bad",
+        texts: [
+            "You slide your chips across the counter. Filling out a deposit form",
+            "CRACK... Something cold and hard hits the back of your skull.",
+            "GAME OVER: Robbed and killed while depositing credits"
+        ],
+        image:   "Bank1.png",
+        tooltip: "Ending 1, Robbed at Gunpoint"
+    },
