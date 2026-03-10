@@ -162,5 +162,19 @@ const scenes = {
         back:    "Back to the Hall"
     },
 
+    ask_room: {
+        texts: [
+            "The bartender squints. 'Fifty credits a night. Don't make a mess.'",
+            "You pay, head upstairs, and close the door behind you.",
+            "Time to search that desk."
+        ],
+        image:   "saloon1.png",
+        tooltip: "Your Room for now",
+        north:   "Open the Drawer",
+        south:   null,
+        east:    null,
+        back:    "Head Back Down"
+    },
+
 
 }
