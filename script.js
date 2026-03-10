@@ -303,3 +303,11 @@ function updateStory(text1, text2, text3){
     area.style.animation = "none";
     area.style.animation = "";
 }
+
+function changeImage(src) {
+    mainImage.style.opacity = "0";
+    setTimeout(() => {
+        mainImage.src = src;
+        mainImage.style.opacity = "1";
+    }, 250);
+}
