@@ -431,9 +431,9 @@ function checkSafe() {
         updateCredits(10000);
         addToInventory("10,000 Quantum Credits");
         updateStory(
-            "KA-CHUNK. The tumblers click into place...",
-            "The vault door swings open with a low hydraulic groan.",
-            "Hang on — this is actually happening..."
+            "KA-CHUNK.",
+            "The vault door swings open.",
+            "Hang on, this is actually happening..."
         );
         setTimeout(() => goToScene("ending_escaped"), 2000);
 
