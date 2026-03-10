@@ -666,3 +666,17 @@ paragraph3.addEventListener("click", function() {
         setTimeout(function() { paragraph3.style.color = ""; }, 800);
     }
 });
+
+
+gameTitle.addEventListener("click", function() {
+    const hints = [
+        "HINT: Look upstairs at the saloon.",
+        "HINT: The shady guy in the corner might not be trustworthy.",
+        "HINT: You need a 4-digit code to crack the vault.",
+        "HINT: Use arrow keys to navigate. Press [I] to check inventory.",
+        "HINT: There are 6 different endings"
+    ];
+    const hint = hints[Math.floor(Math.random() * hints.length)];
+    updateStory(hint, "", "(Click for another hint)");
+    addToLog("Used a hint");
+});
