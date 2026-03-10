@@ -418,30 +418,37 @@ function reviewInventory() {
 
 
 function checkSafe() {
-    const entered = safeInput.value;
-    
-    if (entered === ""){
-        updateStory("You hesitate", "Enter the 4 digit code", "");
+    const entered = safeInput.value.trim();
+
+    if (entered === "") {
+        updateStory("You hesitate.", "Enter the 4-digit code.", "");
         return;
     }
-    if (entered === REAL_CODE){
-        updateStory("The lock clicks open", "Inside you find 10,000 quatum credits.", "");
+
+    if (entered === REAL_CODE) {
+        // SUCCESS 
+        addToLog("Vault opened with correct code: " + entered);
         updateCredits(10000);
-        goToScene("ending_escaped");
-    }
-    if (entered === FAKE_CODE){
-        updateStory("The lock does not move", "", "");
-        updateHealth(0);
-        goToScene("after_fake_code");
-    }
-    if (entered != "" || REAL_CODE || FAKE_CODE){
-        updateStory("The lock does not move","","");
-        updateHealth(0)
-        goToScene("ending_shot_safe")
-        
+        addToInventory("10,000 Quantum Credits");
+        updateStory(
+            "KA-CHUNK. The tumblers click into place...",
+            "The vault door swings open with a low hydraulic groan.",
+            "Hang on — this is actually happening..."
+        );
+        setTimeout(() => goToScene("ending_escaped"), 2000);
+
+    } else {
+        // WRONG CODE 
+        updateHealth(-50);
+        addToLog("Wrong vault code entered: " + entered);
+        updateStory(
+            "INVALID COMBINATION.",
+            "A siren wails.",
+            "You hear something behind you..."
+        );
+        setTimeout(() => goToScene("ending_shot_safe"), 1800);
     }
 }
-
 
 function goToScene(sceneName) {
 
