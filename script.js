@@ -313,6 +313,19 @@ function changeImage(src) {
 }
 
 
+// add to inventory func
+function addToInventory(item) {
+    inventory.push(item);
+    
+    const emptyLi = inventoryList.querySelector(".inv-empty");
+    if (emptyLi) emptyLi.remove();
+
+    const li = document.createElement("li");
+    li.textContent = " - " + item;
+    li.className = "inventory-item";
+    inventoryList.appendChild(li);
+}
+
 
 
 //  INITIALIZE GAME
