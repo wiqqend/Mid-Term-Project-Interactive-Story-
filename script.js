@@ -680,3 +680,8 @@ gameTitle.addEventListener("click", function() {
     updateStory(hint, "", "(Click for another hint)");
     addToLog("Used a hint");
 });
+
+clearLogBtn.addEventListener("click", function() {
+    logArea.innerHTML = "";
+    addToLog("Log cleared.");
+});
