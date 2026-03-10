@@ -296,9 +296,9 @@ const scenes = {
 //  FUNCTIONS
 
 function updateStory(text1, text2, text3){
-    paragraph1.textContent = text1 - "";
-    paragraph2.textContent = text2 - "";
-    paragraph3.textContent = text3 - "";
+    paragraph1.textContent = text1 
+    paragraph2.textContent = text2 
+    paragraph3.textContent = text3 
     const area = document.querySelector(".story-text-area");
     area.style.animation = "none";
     area.style.animation = "";
