@@ -190,6 +190,33 @@ const scenes = {
         back:    "Back to the Room"
     },
 
+    ride_past: {
+        texts: [
+            "You kick your stallion past the town limits.",
+            "Emptyness in front of you.",
+            "What do you do?"
+        ],
+        image:   "exit1.png",
+        tooltip: "Open Road.",
+        north:   "Camp for the Night",
+        south:   null,
+        east:    "Keep Riding",
+        back:    "Ride Back to Town"
+    },
+
+    keep_riding: {
+        texts: [
+            "You ride through the night.",
+            "You can't seem to escape this place.",
+            "You ride back in."
+        ],
+        image:   "exit1.png",
+        tooltip: "Back Again. The town pulls you in",
+        north:   "Head into the Saloon",
+        south:   null,
+        east:    null,
+        back:    null
+    },
 
 
 }
