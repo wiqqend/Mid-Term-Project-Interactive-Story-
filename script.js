@@ -418,7 +418,12 @@ function reviewInventory() {
 
 
 function checkSafe() {
-
+    const entered = safeInput.value;
+    
+    if (entered === ""){
+        updateStory("You hesitate", "Enter the 4 digit code", "")
+        return;
+    }
 }
 
 
