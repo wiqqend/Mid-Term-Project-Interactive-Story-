@@ -182,7 +182,7 @@ const scenes = {
             "A handwritten note. 'Safe combo  7-4-2-1.  Deputy Alex Freiders'",
             "I wonder what I can use this on?"
         ],
-        image:   "codereal.png",   // swap to drawer1.png 
+        image:   "codereal.png",  
         tooltip: "I wonder what this is for",
         north:   "Head to the Bank",
         south:   null,
@@ -552,6 +552,8 @@ northButton.addEventListener("click", function() {
         }
     else if (currentScene === "ask_room"){         
         goToScene("found_real_code");
+        addToInventory("Deputy's Note (Vault Combo: 7-4-2-1)");
+        addToLog("Found the vault combination in the drawer!");
         }
     else if (currentScene === "found_real_code"){  
         goToScene("bank_hostage");
@@ -591,9 +593,12 @@ southButton.addEventListener("click", function() {
 });
 
 eastButton.addEventListener("click", function() {
-    if (currentScene === "town_entrance") goToScene("ride_past");
-    else if (currentScene === "saloon")   goToScene("upstairs_hall");
-    else if (currentScene === "ride_past") goToScene("keep_riding");
+    if (currentScene === "town_entrance") 
+        goToScene("ride_past");
+    else if (currentScene === "saloon")   
+        goToScene("upstairs_hall");
+    else if (currentScene === "ride_past") 
+        goToScene("keep_riding");
 });
 
 backButton.addEventListener("click", function() {
