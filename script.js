@@ -330,7 +330,7 @@ function addToInventory(item) {
 // func to add actions to the log
 function addToLog(entry) {
     const p = document.createElement("p");
-    p.textContent = "› " + entry;
+    p.textContent = "> " + entry;
     p.className = "log-entry latest";
     logArea.appendChild(p);
 }
