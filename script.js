@@ -511,7 +511,6 @@ function resetGame() { // reset to game defaults
 
     inventoryList.innerHTML = "";
     logArea.innerHTML = "";
-    addToInventory("( empty bags ) ")
     creditsSpan.textContent = "500";
     updateHealth(0)
 
