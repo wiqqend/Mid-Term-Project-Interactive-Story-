@@ -41,8 +41,8 @@ const scenes = {
     // TOWN ENTRANCE
     town_entrance: {
         texts: [
-            "You drift into town, neon signs flickering above dusty wood walls.",
-            "Wanted posters glitch in the wind. Your laser revolver at your hip.",
+            "You go into town, neon signs flickering above dusty wood walls.",
+            "Your laser revolver at your hip.",
             "The town is infront, Where do you head?"
         ],
         image:   "townentrance.png",
@@ -295,7 +295,7 @@ const scenes = {
 
 //  FUNCTIONS
 
-function updateStory(text1, text2, text3){
+function updateStory(text1, text2, text3){ // function to change the <p> tags in my html
     paragraph1.textContent = text1 
     paragraph2.textContent = text2 
     paragraph3.textContent = text3 
@@ -305,7 +305,7 @@ function updateStory(text1, text2, text3){
 
 }
 
-function changeImage(src) {
+function changeImage(src) { // function to change the <img> tag in the html
     mainImage.style.opacity = "0";
     setTimeout(() => {
         mainImage.src = src;
@@ -318,16 +318,16 @@ function changeImage(src) {
 function addToInventory(item) {
     inventory.push(item);
     
-    const emptyLi = inventoryList.querySelector(".inv-empty");
+    const emptyLi = inventoryList.querySelector(".inv-empty"); //checks if inv is empty
     if (emptyLi) emptyLi.remove();
 
-    const li = document.createElement("li");
+    const li = document.createElement("li"); // adds item passed into the function to inv
     li.textContent = " - " + item;
     li.className = "inventory-item";
     inventoryList.appendChild(li);
 }
 
-// func to add your actions to the log
+// func to add actions to the log
 function addToLog(entry) {
     const p = document.createElement("p");
     p.textContent = "› " + entry;
@@ -335,6 +335,8 @@ function addToLog(entry) {
     logArea.appendChild(p);
 }
 
+
+// updates hp based on the number passed into it, and changes the hp bar color depending on the #
 function updateHealth(x) {
     health = Math.max(0, Math.min(100, health + x));
     healthSpan.textContent = health;
@@ -349,6 +351,7 @@ function updateHealth(x) {
     }
 }
 
+// adds the # passed to the function to total credits
 function updateCredits(x) {
     credits = Math.max(0, credits + x);
     creditsSpan.textContent = credits;
@@ -391,11 +394,11 @@ function showButtons(config) {
     }
 
     // safe input
-    safeSection.style.display = config.showSafe ? "block" : "none";
+    safeSection.style.display = config.showSafe ? "block" : "none"; // smart cookie am i right im so smart for using the ? right?
     if (config.showSafe) safeInput.value = "";
 }
 
-function reviewInventory() {
+function reviewInventory() { // when button is clicked (or I) it changes the <p> tags to be your inventory
     if (inventory.length === 0){
         updateStory("Your Bags are empty.",
             "You have not picked up anything.",
@@ -403,7 +406,7 @@ function reviewInventory() {
         );
     return;
     }
-    let listText = "You have: ";
+    let listText = "You have: "; // this is the side bar, aswell as the <p> text it puts the inv in a list on the right
     for (let i = 0; i < inventory.length; i++){
         listText += inventory[i];
         if (i < inventory.length -1) listText += " - ";
@@ -412,8 +415,8 @@ function reviewInventory() {
 }
 
 
-function checkSafe() {
-    const entered = safeInput.value.trim();
+function checkSafe() { // func for checking the safe combo entered
+    const entered = safeInput.value.trim(); // removes side spaces
 
     if (entered === "") {
         updateStory("You hesitate.", "Enter the 4-digit code.", "");
@@ -428,7 +431,7 @@ function checkSafe() {
         updateStory(
             "KA-CHUNK.",
             "The vault door swings open.",
-            "Hang on, this is actually happening..."
+            ""
         );
         setTimeout(() => goToScene("ending_escaped"), 2000);
 
@@ -441,13 +444,17 @@ function checkSafe() {
             "A siren wails.",
             "You hear something behind you..."
         );
-        setTimeout(() => goToScene("ending_shot_safe"), 1800);
+        setTimeout(() => goToScene("ending_shot_safe"), 2000);
     }
 }
 
 function goToScene(sceneName) {
     const scene = scenes[sceneName];
-    if (!scene) { console.warn("Unknown scene:", sceneName); return; }
+    if (!scene) { // makes sure scene is correct
+        console.log("Unknown scene:", sceneName); 
+        return; 
+    }
+
 
     currentScene = sceneName;
 
@@ -483,7 +490,7 @@ function goToScene(sceneName) {
     // Reset body class for non-endings
     document.body.className = "";
 
-    showButtons({
+    showButtons({ 
         north:    scene.north,
         south:    scene.south,
         east:     scene.east,
@@ -491,10 +498,10 @@ function goToScene(sceneName) {
         showSafe: scene.showSafe || false
     });
 
-    addToLog("Entered: " + sceneName.replace(/_/g, " "));
+    addToLog("Entered: " + sceneName.replace(/_/g, " ")); //removes all underscores (if still exist with space) and displays code into log
 }
 
-function resetGame() {
+function resetGame() { // reset to game defaults
     currentScene = "town_entrance";
     hasRealCode  = false;
     hasFakeCode  = false;
@@ -515,10 +522,14 @@ function resetGame() {
 //  EVENT LISTENERS 
 
 northButton.addEventListener("click", function() {
-    if (currentScene === "town_entrance")    goToScene("bank");
-    else if (currentScene === "bank")        goToScene("talk_teller");
-    else if (currentScene === "talk_teller") goToScene("ending_robbed_teller");
-    else if (currentScene === "saloon")      goToScene("ending_drunk_robbed");
+    if (currentScene === "town_entrance")    
+        goToScene("bank");
+    else if (currentScene === "bank")        
+        goToScene("talk_teller");
+    else if (currentScene === "talk_teller") 
+        goToScene("ending_robbed_teller");
+    else if (currentScene === "saloon")      
+        goToScene("ending_drunk_robbed");
     else if (currentScene === "corner_guy") {
         if (credits < 200) {
             updateStory("You don't have enough credits.", "You need at least 200.", "");
@@ -530,22 +541,42 @@ northButton.addEventListener("click", function() {
         addToLog("Paid 200 credits to the shady guy.");
         goToScene("after_fake_code");
     }
-    else if (currentScene === "after_fake_code") goToScene("bank_hostage");
-    else if (currentScene === "upstairs_hall")   goToScene("upstairs_room");
-    else if (currentScene === "upstairs_room")   goToScene("ask_room");
-    else if (currentScene === "ask_room")         goToScene("found_real_code");
-    else if (currentScene === "found_real_code")  goToScene("bank_hostage");
-    else if (currentScene === "ride_past")        goToScene("ending_bear");
-    else if (currentScene === "keep_riding")      goToScene("saloon");
+    else if (currentScene === "after_fake_code"){
+        goToScene("bank_hostage");
+        }
+    else if (currentScene === "upstairs_hall"){
+        goToScene("upstairs_room");
+        }
+    else if (currentScene === "upstairs_room"){   
+        goToScene("ask_room");
+        }
+    else if (currentScene === "ask_room"){         
+        goToScene("found_real_code");
+        }
+    else if (currentScene === "found_real_code"){  
+        goToScene("bank_hostage");
+        }
+    else if (currentScene === "ride_past"){        
+        goToScene("ending_bear");
+        }
+        else if (currentScene === "keep_riding"){      
+        goToScene("saloon");
+        }
 });
 
 southButton.addEventListener("click", function() {
-    if (currentScene === "town_entrance")    goToScene("saloon");
+    if (currentScene === "town_entrance") {    
+        goToScene("saloon");
+    }
     else if (currentScene === "talk_teller") {
         goToScene("bank_hostage");
     }
-    else if (currentScene === "saloon")       goToScene("corner_guy");
-    else if (currentScene === "corner_guy")   goToScene("saloon");      // run away
+    else if (currentScene === "saloon") {
+        goToScene("corner_guy");
+    }
+    else if (currentScene === "corner_guy") {  
+        goToScene("saloon");      // run away
+    }
     else if (currentScene === "after_fake_code") {
         addToLog("Went back to ask the corner guy again...");
         goToScene("ending_shot_back");
