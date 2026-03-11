@@ -502,7 +502,7 @@ function resetGame() {
     credits      = 500;
     health       = 100;
 
-    inventoryList.innerHTML = " ( empty bag ) ";
+    inventoryList.innerHTML = "";
     logArea.innerHTML = "";
     creditsSpan.textContent = "500";
     updateHealth(0)
