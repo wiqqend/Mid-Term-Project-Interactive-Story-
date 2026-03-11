@@ -7,76 +7,97 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
+
+    <div class="game-wrapper">
+
+        <!-- Header -->
         <header class="game-header">
             <h1 id="gameTitle">NEON RUST</h1>
-            <p class="subtitle">A Sci-Fi Western Adventure. Use Arrow Keys or Buttons to Navigate</p>
+            <p class="subtitle">A Sci-Fi Western Adventure | Use Arrow Keys or Buttons to Navigate</p>
         </header>
-    <!-- scene image -->
-        <img id="mainimage" src="townentrance.png" alt="Current scene">
-        <div id="tooltip">Hover for location info</div>    
-        
-    <!-- story text -->
-        <div class="story-text-area">
-            <p id="paragraph1" class="story-text">Welcome to Neon Rust!</p>
-            <p id="paragraph2" class="story-text">An alternate reality with cyber on the frontier.</p>
-            <p id="paragraph3" class="story-text">What will you do?</p>
-        </div>
 
-    <!-- navigation buttons -->
-        <div class="controls-area">
-            <div class="button-row" id="directionButtons">
-                <button id="northbutton" class="btn btn-north"> North </button>
-                <button id="southbutton" class="btn btn-south"> South </button>
-                <button id="eastbutton"  class="btn btn-east"> East </button>
-                <button id="backbutton"  class="btn btn-back"> Back</button>
-                    
-            </div>
+        <div class="game-layout">
 
-    <!-- vault input -->
-            <div class="safe-section" id="safeSection" style="display:none;">
-                <div class="safe-panel">
-                    <label class="safe-label"> VAULT COMBINATION </label>
-                    <div class="safe-input-row">
-                        <input type="text" id="safeinput" class="safe-input"
-                            maxlength="4" placeholder="_ _ _ _">
-                        <button id="submitButton" class="btn btn-submit">OPEN SAFE</button>
+            <!-- MAIN STORY PANEL -->
+            <main class="story-panel">
+
+                <!-- Scene Image -->
+                <div class="image-container">
+                    <img id="mainimage" src="townentrance.png" alt="Current scene">
+                    <div id="tooltip" class="tooltip">Hover for location info</div>
+                </div>
+
+                <!-- Story Text -->
+                <div class="story-text-area">
+                    <p id="paragraph1" class="story-text">Welcome to Neon Rust!</p>
+                    <p id="paragraph2" class="story-text">An alternate reality with cyber on the frontier.</p>
+                    <p id="paragraph3" class="story-text">What will you do?</p>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="controls-area">
+                    <div class="button-row" id="directionButtons">
+                        <button id="northbutton" class="btn btn-north">North</button>
+                        <button id="southbutton" class="btn btn-south">South</button>
+                        <button id="eastbutton"  class="btn btn-east">East</button>
+                        <button id="backbutton"  class="btn btn-back">Back</button>
+                    </div>
+
+                    <!-- Vault Safe Input (hidden by default) -->
+                    <div class="safe-section" id="safeSection" style="display:none;">
+                        <div class="safe-panel">
+                            <label class="safe-label">VAULT COMBINATION</label>
+                            <div class="safe-input-row">
+                                <input type="text" id="safeinput" class="safe-input"
+                                       maxlength="4" placeholder="_ _ _ _">
+                                <button id="submitButton" class="btn btn-submit">OPEN SAFE</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- Inventory Button -->
+                <button id="reviewButton" class="btn btn-inventory">Check Inventory [I]</button>
+
+            </main>
+
+            <!-- SIDE PANEL -->
+            <aside class="side-panel">
+
+                <!-- Status -->
+                <div class="status-card">
+                    <h3 class="panel-title">STATUS</h3>
+                    <div class="status-row">
+                        <span>Health:</span>
+                        <span id="healthSpan">100</span>
+                    </div>
+                    <div class="health-bar-container">
+                        <div id="healthBar" class="health-bar-fill"></div>
+                    </div>
+                    <div class="status-row">
+                        <span>Credits:</span>
+                        <span id="creditsSpan">500</span>
+                    </div>
+                </div>
+
+                <!-- Inventory -->
+                <div class="inventory-card">
+                    <h3 class="panel-title">INVENTORY</h3>
+                    <ul id="inventoryList" class="inventory-list">
+                        <li class="inv-empty">( empty bags )</li>
+                    </ul>
+                </div>
+
+                <!-- Trail Log -->
+                <div class="log-card">
+                    <h3 class="panel-title">TRAIL LOG <span class="log-clear" id="clearLogBtn">[clear]</span></h3>
+                    <div id="logArea" class="log-area"></div>
+                </div>
+
+            </aside>
         </div>
-        <!-- inventory review button/keybind -->
-        <button id="reviewButton" class="btn btn-inventory"> Check Inventory [I]</button>
+    </div>
 
-        <!-- status -->
-        <aside>
-            <h3 class="panel-title">STATUS</h3>
-            <div class="status-row">
-                <span>Health:</span>
-                <span id="healthSpan">100</span>
-            </div>
-            <div class="health-bar-container">
-                <div id="healthBar" class="health-bar-fill"></div>
-            </div>
-            <div class="status-row">
-                <span>Credits:</span>
-                <span id="creditsSpan">500</span>
-            </div>
-
-            <!-- inventory -->
-            <div class="inventory-card">
-                <h3 class="panel-title">INVENTORY</h3>
-                <ul id="inventoryList" class="inventory-list">
-                <li class="inv-empty">( empty bags )</li>
-                </ul>
-            </div>
-
-            <!-- Trail Log -->
-            <div class="log-card">
-                <h3 class="panel-title">TRAIL LOG <span id="clearLogBtn" style="cursor:pointer; font-size:0.7rem;">[clear]</span></h3>
-                <div id="logArea" class="log-area"></div>
-            </div>
-        </aside>
     <script src="script.js" defer></script>
 </body>
 </html>
