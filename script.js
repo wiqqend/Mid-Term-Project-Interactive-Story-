@@ -320,7 +320,7 @@ function addToInventory(item) {
     
     const emptyLi = inventoryList.querySelector(".inv-empty"); //checks if inv is empty
     if (emptyLi) emptyLi.remove();
-
+    
     const li = document.createElement("li"); // adds item passed into the function to inv
     li.textContent = " - " + item;
     li.className = "inventory-item";
