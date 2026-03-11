@@ -59,7 +59,7 @@ const scenes = {
             "A teller counts quantum chips behind the counter.",
             "A small crater near the safe."
         ],
-        image:   "Bank1.png",
+        image:   "bank1.png",
         tooltip: "Bank of Neon Rust",
         north:   "Talk to the Teller",
         south:   null,
@@ -72,7 +72,7 @@ const scenes = {
             "Behind her, the safe is made of thick steel with a 4-digit combination lock.",
             "Deposit your credits citizen... or make this more interesting."
         ],
-        image:   "Bank1.png",
+        image:   "bank2.png",
         tooltip: "The Safe, one wrong move...",
         north:   "Deposit Some Cash",
         south:   "Hold the Teller Hostage",
@@ -82,10 +82,10 @@ const scenes = {
     bank_hostage: {
         texts: [
             "You draw your laser revolver. 'Everyone on the floor NOW!'",
-            "",  // filled in by go to scene function
+            "",  
             "Enter the 4-digit vault combination and crack the safe."
         ],
-        image:   "bank2.jpg",
+        image:   "bank3.png",
         tooltip: "The safe. This is your one shot",
         north:   null,
         south:   null,
@@ -113,7 +113,7 @@ const scenes = {
             "'I know the bank vault combination,' he rasps. 'Two hundred and it's yours.'",
             "Do you trust him?"
         ],
-        image:   "saloon1.png",
+        image:   "getadrink.jpeg",
         tooltip: "Shady Character, He knows something",
         north:   "Give Him 200 Credits",
         south:   "Run Away",
@@ -127,7 +127,7 @@ const scenes = {
             "'Trust me, pardner,' he winks.",
             "What now?"
         ],
-        image:   "saloon1.png",
+        image:   "getadrink.jpeg",
         tooltip: "That code looks familiar...",
         north:   "Head to the Bank",
         south:   "Ask Him About the Code Again",
@@ -141,8 +141,8 @@ const scenes = {
             "At the end of the hall a door flickers with pale amber light. Something shuffles behind it.",
             "Do you open it?"
         ],
-        image:   "saloon1.png",   // swap to upstairs1.png 
-        tooltip: "Upstairs Hall — Something is up here",
+        image:   "door.jpg",   
+        tooltip: "Upstairs Hall, Something is up here",
         north:   "Open the Door",
         south:   null,
         east:    null,
@@ -154,7 +154,7 @@ const scenes = {
             "A used bed, a flickering lamp, and a desk with a drawer left ajar.",
             "You could rent the room officially... or just search the desk now."
         ],
-        image:   "saloon1.png",   // swap to upstairs1.png when you have it
+        image:   "drawer.png",
         tooltip: "Empty Room, or is it?",
         north:   "Ask the Bartender for the Room (50 Credits)",
         south:   "Open the Drawer",
@@ -168,7 +168,7 @@ const scenes = {
             "You pay, head upstairs, and close the door behind you.",
             "Time to search that desk."
         ],
-        image:   "saloon1.png",
+        image:   "drawer.png",
         tooltip: "Your Room for now",
         north:   "Open the Drawer",
         south:   null,
@@ -182,7 +182,7 @@ const scenes = {
             "A handwritten note. 'Safe combo  7-4-2-1.  Deputy Alex Freiders'",
             "I wonder what I can use this on?"
         ],
-        image:   "saloon1.png",   // swap to drawer1.png 
+        image:   "codereal.png",   // swap to drawer1.png 
         tooltip: "I wonder what this is for",
         north:   "Head to the Bank",
         south:   null,
@@ -210,7 +210,7 @@ const scenes = {
             "You can't seem to escape this place.",
             "You ride back in."
         ],
-        image:   "exit1.png",
+        image:   "night.png",
         tooltip: "Back Again. The town pulls you in",
         north:   "Head into the Saloon",
         south:   null,
@@ -229,7 +229,7 @@ const scenes = {
             "CRACK... Something cold and hard hits the back of your skull.",
             "GAME OVER: Robbed and killed while depositing credits"
         ],
-        image:   "Bank2.png",
+        image:   "endlose.png",
         tooltip: "Ending 1, Robbed at Gunpoint"
     },
 
@@ -241,7 +241,7 @@ const scenes = {
             "Three laser sights appear on your chest.",
             "GAME OVER: Deputies shot you from behind the filing cabinets."
         ],
-        image:   "bank2.jpg",
+        image:   "endlose.png",
         tooltip: "Ending 2. Shot at the Safe"
     },
     ending_escaped: {
@@ -252,7 +252,7 @@ const scenes = {
             "You fill your bag, and walk out the back.",
             "ENDING UNLOCKED: THE HEIST. You escaped Neon Rust"
         ],
-        image:   "bank3.jpg",
+        image:   "endwin.png",
         tooltip: "Ending 3, The Heist"
     },
 
@@ -264,7 +264,7 @@ const scenes = {
             "You slump against the counter and close your eyes ",
             "GAME OVER: You wake up in an alley. Credits, horse, and revolver gone. Robbed while passed out drunk."
         ],
-        image:   "saloon1.png",
+        image:   "endlose.png",
         tooltip: "Ending 4, Robbed While Drunk"
     },
 
@@ -276,7 +276,7 @@ const scenes = {
             "A laser bolt hits you between the shoulder blades.",
             "GAME OVER: You should never have gone back. Shot in the back."
         ],
-        image:   "saloon1.png",
+        image:   "endlose.png",
         tooltip: "Ending 5, Shot in the Back"
     },
     ending_bear: {
@@ -287,7 +287,7 @@ const scenes = {
             "A bear comes out of the darkness.",
             "GAME OVER: The last thing you hear is jaws snapping shut."
         ],
-        image:   "exit1.png",
+        image:   "endlose.png",
         tooltip: "Ending 6, Eaten by a Bear"
     }
 };
