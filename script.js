@@ -42,8 +42,8 @@ const scenes = {
     town_entrance: {
         texts: [
             "You go into town, neon signs flickering above dusty wood walls.",
-            "Your laser revolver at your hip.",
-            "The town is infront, Where do you head?"
+            "Your laser gun at your hip.",
+            "Where do you head?"
         ],
         image:   "townentrance.png",
         tooltip: "Neon Rust, Population: 347",
@@ -55,9 +55,9 @@ const scenes = {
 
     bank: {
         texts: [
-            "The bank hums of machines and old coin sorters.",
+            "",
             "A teller counts quantum chips behind the counter.",
-            "A small crater near the safe."
+            "A vault behind her."
         ],
         image:   "bank1.png",
         tooltip: "Bank of Neon Rust",
@@ -68,9 +68,9 @@ const scenes = {
     },
     talk_teller: {
         texts: [
-            "'What you need, stranger?' the teller asks.",
-            "Behind her, the safe is made of thick steel with a 4-digit combination lock.",
-            "Deposit your credits citizen... or make this more interesting."
+            "'What you need, stranger?'",
+            "Behind her, the safe has 4-digit combination lock.",
+            "Deposit your credits citizen."
         ],
         image:   "bank2.png",
         tooltip: "The Safe, one wrong move...",
@@ -95,8 +95,8 @@ const scenes = {
     },  
     saloon: {
         texts: [
-            "The Saloon reeks of whiskey and old leather.",
-            "A piano plays in the corner. A shady figure nurses a drink and watches you.",
+            "The Saloon reeks of whiskey",
+            "A shady figure nurses a drink and watches you.",
             "What do you do?"
         ],
         image:   "saloon1.png",
@@ -511,6 +511,7 @@ function resetGame() { // reset to game defaults
 
     inventoryList.innerHTML = "";
     logArea.innerHTML = "";
+    addToInventory("( empty bags ) ")
     creditsSpan.textContent = "500";
     updateHealth(0)
 
@@ -537,7 +538,7 @@ northButton.addEventListener("click", function() {
         }
         updateCredits(-200);
         hasFakeCode = true;
-        addToInventory("Crumpled Note (Code: 1-2-3-4?)");
+        addToInventory("Crumpled Note (Code: 1-2-3-4)");
         addToLog("Paid 200 credits to the shady guy.");
         goToScene("after_fake_code");
     }
@@ -621,8 +622,13 @@ backButton.addEventListener("click", function() {
         keep_riding:     "town_entrance"
     };
     const dest = backMap[currentScene];
-    if (dest) goToScene(dest);
-    else resetGame(); 
+    if (dest){
+         goToScene(dest);
+        }
+
+    else {
+        resetGame();
+    }
 });
 
 submitButton.addEventListener("click", function() {
