@@ -637,9 +637,6 @@ safeInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") checkSafe();
 });
 
-safeInput.addEventListener("input", function() {
-    safeInput.value = safeInput.value.replace(/\D/g, "");
-});
 
 paragraph1.addEventListener("click", function() {
     if (paragraph1.textContent) {
