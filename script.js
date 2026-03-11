@@ -299,9 +299,6 @@ function updateStory(text1, text2, text3){ // function to change the <p> tags in
     paragraph1.textContent = text1 
     paragraph2.textContent = text2 
     paragraph3.textContent = text3 
-    const area = document.querySelector(".story-text-area");
-    area.style.animation = "none";
-    area.style.animation = "";
 
 }
 
