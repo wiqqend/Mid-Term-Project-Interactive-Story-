@@ -17,9 +17,11 @@
         <div id="tooltip">Hover for location info</div>    
         
     <!-- story text -->
-        <p id="paragraph1" class="story-text">Welcome to Neon Rust!</p>
-        <p id="paragraph2" class="story-text">An alternate reality with cyber on the frontier.</p>
-        <p id="paragraph3" class="story-text">What will you do?</p>
+        <div class="story-text-area">
+            <p id="paragraph1" class="story-text">Welcome to Neon Rust!</p>
+            <p id="paragraph2" class="story-text">An alternate reality with cyber on the frontier.</p>
+            <p id="paragraph3" class="story-text">What will you do?</p>
+        </div>
 
     <!-- navigation buttons -->
         <div class="controls-area">
@@ -71,7 +73,7 @@
 
             <!-- Trail Log -->
             <div class="log-card">
-                <h3 class="panel-title">TRAIL LOG</h3>
+                <h3 class="panel-title">TRAIL LOG <span id="clearLogBtn" style="cursor:pointer; font-size:0.7rem;">[clear]</span></h3>
                 <div id="logArea" class="log-area"></div>
             </div>
         </aside>
