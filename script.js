@@ -305,11 +305,7 @@ function updateStory(text1, text2, text3){ // function to change the <p> tags in
 }
 
 function changeImage(src) { // function to change the <img> tag in the html
-    mainImage.style.opacity = "0";
-    setTimeout(() => {
-        mainImage.src = src;
-        mainImage.style.opacity = "1";
-    }, 250);
+    mainImage.src = src;    
 }
 
 
@@ -432,14 +428,14 @@ function checkSafe() { // func for checking the safe combo entered
             "The vault door swings open.",
             ""
         );
-        setTimeout(() => goToScene("ending_escaped"), 2000);
+        setTimeout(goToScene, 2000, "ending_escaped");
 
     } else {
         // wrong code
         updateHealth(-50);
         addToLog("Wrong vault code entered: " + entered);
-        updateStory("INVALID COMBINATION.","A siren wails.","You hear something behind you...");
-        setTimeout(() => goToScene("ending_shot_safe"), 2000);
+        updateStory("INVALID COMBINATION.","A siren goes off","You hear something behind you...");
+        setTimeout(goToScene, 2000, "ending_shot_safe");
     }
 }
 
@@ -682,21 +678,18 @@ safeInput.addEventListener("keydown", function(event) {
 paragraph1.addEventListener("click", function() {
     if (paragraph1.textContent) {
         paragraph1.style.color = "#f0c060";
-        setTimeout(function() { paragraph1.style.color = ""; }, 800);
     }
 });
 
 paragraph2.addEventListener("click", function() {
     if (paragraph2.textContent) {
         paragraph2.style.color = "#f0c060";
-        setTimeout(function() { paragraph2.style.color = ""; }, 800);
     }
 });
 
 paragraph3.addEventListener("click", function() {
     if (paragraph3.textContent) {
         paragraph3.style.color = "#f0c060";
-        setTimeout(function() { paragraph3.style.color = ""; }, 800);
     }
 });
 
