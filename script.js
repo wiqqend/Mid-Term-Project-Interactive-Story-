@@ -23,6 +23,8 @@ const healthSpan   = document.getElementById("healthSpan");
 const creditsSpan  = document.getElementById("creditsSpan");
 const healthBar    = document.getElementById("healthBar");
 
+const emptyinv = document.getElementsByClassName("inv-empty");
+
 // variables
 let currentScene = "town_entrance";
 let hasRealCode  = false;   // found real safe combo upstairs
@@ -400,7 +402,7 @@ function reviewInventory() { // when button is clicked (or I) it changes the <p>
         updateStory("Your Bags are empty.",
             "You have not picked up anything.",
             "Explore to find items."
-        );
+        );        
     return;
     }
     let listText = "You have: "; // this is the side bar, aswell as the <p> text it puts the inv in a list on the right
@@ -502,8 +504,7 @@ function resetGame() { // reset to game defaults
     credits      = 500;
     health       = 100;
 
-
-    inventoryList.innerHTML = "";
+    emptyinv.innerHTML = "inv-empty"
     logArea.innerHTML = "";
     creditsSpan.textContent = "500";
     updateHealth(0)
