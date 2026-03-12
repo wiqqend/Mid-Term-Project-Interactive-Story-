@@ -508,9 +508,9 @@ function resetGame() { // reset to game defaults
     logArea.innerHTML = "";
     creditsSpan.textContent = "500";
     updateHealth(0)
-
-    goToScene("town_entrance")
     addToLog("New game started. Welcome Back")
+    goToScene("town_entrance")
+    
 
 }
 
@@ -724,6 +724,5 @@ clearLogBtn.addEventListener("click", function() {
 
 
 //  INITIALIZE GAME
-
-goToScene("town_entrance");
 addToLog("You arrived in Neon Rust. Population: 347.");
+goToScene("town_entrance");
