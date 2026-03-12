@@ -596,7 +596,12 @@ eastButton.addEventListener("click", function() {
 });
 
 backButton.addEventListener("click", function() {
-    if (currentScene === "game_over" || document.body.classList.contains("ending-bad") || document.body.classList.contains("ending-good")) {
+    if (document.body.classList.contains("ending-bad")) {
+        updateHealth(-100);
+        resetGame();
+        return;
+    }
+    else if (document.body.classList.contains("ending-good")){
         resetGame();
         return;
     }
