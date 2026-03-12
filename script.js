@@ -154,10 +154,10 @@ const scenes = {
         texts: [
             "You ease the door open. Empty.",
             "A used bed, a flickering lamp, and a desk with a drawer left ajar.",
-            "You could rent the room officially... or just search the desk now."
+            ""
         ],
         image:   "drawer.png",
-        tooltip: "Empty Room, or is it?",
+        tooltip: "Empty Room",
         north:   "Ask the Bartender for the Room (50 Credits)",
         south:   "Open the Drawer",
         east:    null,
@@ -168,7 +168,7 @@ const scenes = {
         texts: [
             "The bartender squints. 'Fifty credits a night. Don't make a mess.'",
             "You pay, head upstairs, and close the door behind you.",
-            "Time to search that desk."
+            "",
         ],
         image:   "drawer.png",
         tooltip: "Your Room for now",
