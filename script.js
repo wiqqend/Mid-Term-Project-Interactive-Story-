@@ -396,7 +396,7 @@ function showButtons(config) {
 }
 
 function reviewInventory() { // when button is clicked (or I) it changes the <p> tags to be your inventory
-    if (inventory.length === 0){
+    if (inventory.length === 0){ // if your inventory is empty (length===0) then changes <p> tags to display X
         updateStory("Your Bags are empty.",
             "You have not picked up anything.",
             "Explore to find items."
@@ -421,26 +421,22 @@ function checkSafe() { // func for checking the safe combo entered
     }
 
     if (entered === REAL_CODE) {
-        // SUCCESS 
+        // Right code
         addToLog("Vault opened with correct code: " + entered);
         updateCredits(10000);
         addToInventory("10,000 Quantum Credits");
         updateStory(
-            "KA-CHUNK.",
+            "",
             "The vault door swings open.",
             ""
         );
         setTimeout(() => goToScene("ending_escaped"), 2000);
 
     } else {
-        // WRONG CODE 
+        // wrong code
         updateHealth(-50);
         addToLog("Wrong vault code entered: " + entered);
-        updateStory(
-            "INVALID COMBINATION.",
-            "A siren wails.",
-            "You hear something behind you..."
-        );
+        updateStory("INVALID COMBINATION.","A siren wails.","You hear something behind you...");
         setTimeout(() => goToScene("ending_shot_safe"), 2000);
     }
 }
@@ -472,15 +468,15 @@ function goToScene(sceneName) {
         addToLog("Paid 50 credits for a room at the saloon.");
     }
 
-    updateStory(...scene.texts);
+    updateStory(...scene.texts); // adds the arrays of texts
     changeImage(scene.image);
     tooltip.textContent = scene.tooltip;
 
     // Handle endings
     if (scene.isEnding) {
         showButtons({ showRestartBack: true });
-        document.body.className = scene.endingType === "good" ? "ending-good" : "ending-bad";
-        addToLog((scene.endingType === "good" ? "Winner" : "Dead") + " " + scene.tooltip);
+        document.body.className = scene.endingType === "good" ? "ending-good" : "ending-bad"; 
+        addToLog((scene.endingType === "good" ? "Winner:" : "Dead:") + " " + scene.tooltip);
         return;
     }
 
@@ -495,7 +491,7 @@ function goToScene(sceneName) {
         showSafe: scene.showSafe || false
     });
 
-    addToLog("Entered: " + sceneName.replace(/_/g, " ")); //removes all underscores (if still exist with space) and displays code into log
+    addToLog("Entered: " + sceneName) 
 }
 
 function resetGame() { // reset to game defaults
@@ -505,6 +501,7 @@ function resetGame() { // reset to game defaults
     inventory    = [];
     credits      = 500;
     health       = 100;
+
 
     inventoryList.innerHTML = "";
     logArea.innerHTML = "";
