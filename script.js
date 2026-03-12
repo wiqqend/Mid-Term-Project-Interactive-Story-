@@ -123,7 +123,7 @@ const scenes = {
         back:    "Back to the Bar"
     },
 
-    after_fake_code: {
+    after_code: {
         texts: [
             "He takes your credits and slides a scrap of paper across the bar: 9832.",
             "'Trust me, pardner,' he winks.",
@@ -178,7 +178,7 @@ const scenes = {
         back:    "Head Back Down"
     },
 
-    found_real_code: {
+    found_code: {
         texts: [
             "You pull the drawer open and dig through papers.",
             "A handwritten note. 'Safe combo  7-4-2-1.  Deputy Alex Freiders'",
@@ -530,9 +530,9 @@ northButton.addEventListener("click", function() {
         hasFakeCode = true;
         addToInventory("Crumpled Note (Code: 9832)");
         addToLog("Paid 200 credits to the shady guy.");
-        goToScene("after_fake_code");
+        goToScene("after_code");
     }
-    else if (currentScene === "after_fake_code"){
+    else if (currentScene === "after_code"){
         goToScene("bank_hostage");
         }
     else if (currentScene === "upstairs_hall"){
@@ -542,11 +542,11 @@ northButton.addEventListener("click", function() {
         goToScene("ask_room");
         }
     else if (currentScene === "ask_room"){         
-        goToScene("found_real_code");
+        goToScene("found_code");
         addToInventory("Deputy's Note (Vault Combo: 7-4-2-1)");
         addToLog("Found the vault combination in the drawer!");
         }
-    else if (currentScene === "found_real_code"){  
+    else if (currentScene === "found_code"){  
         goToScene("bank_hostage");
         }
     else if (currentScene === "ride_past"){        
@@ -570,7 +570,7 @@ southButton.addEventListener("click", function() {
     else if (currentScene === "corner_guy") {  
         goToScene("saloon");      // run away
     }
-    else if (currentScene === "after_fake_code") {
+    else if (currentScene === "after_code") {
         addToLog("Went back to ask the corner guy again...");
         goToScene("ending_shot_back");
     }
@@ -579,7 +579,7 @@ southButton.addEventListener("click", function() {
         hasRealCode = true;
         addToInventory("Deputy's Note (Vault Combo: 7-4-2-1)");
         addToLog("Found the vault combination in the drawer!");
-        goToScene("found_real_code");
+        goToScene("found_code");
     }
 });
 
@@ -608,11 +608,11 @@ backButton.addEventListener("click", function() {
         bank_hostage:    "bank",
         saloon:          "town_entrance",
         corner_guy:      "saloon",
-        after_fake_code: "saloon",
+        after_code: "saloon",
         upstairs_hall:   "saloon",
         upstairs_room:   "upstairs_hall",
         ask_room:        "upstairs_room",
-        found_real_code: "upstairs_room",
+        found_code: "upstairs_room",
         ride_past:       "town_entrance",
         keep_riding:     "town_entrance"
     };
