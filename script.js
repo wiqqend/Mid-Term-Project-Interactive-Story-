@@ -32,7 +32,7 @@ let credits      = 500;
 let health       = 100;
 
 const REAL_CODE  = "7421";  // the actual vault combination
-const FAKE_CODE  = "1234";  // the combination sold by the shady guy
+const FAKE_CODE  = "9832";  // the combination sold by the shady guy
 
 
 //  SCENE DATA (null = no button)
@@ -96,7 +96,7 @@ const scenes = {
     saloon: {
         texts: [
             "The Saloon reeks of whiskey",
-            "A shady figure nurses a drink and watches you.",
+            "A figure nurses a drink and watches you.",
             "What do you do?"
         ],
         image:   "saloon1.png",
@@ -123,7 +123,7 @@ const scenes = {
 
     after_fake_code: {
         texts: [
-            "He takes your credits and slides a scrap of paper across the bar: 1-2-3-4.",
+            "He takes your credits and slides a scrap of paper across the bar: 9832.",
             "'Trust me, pardner,' he winks.",
             "What now?"
         ],
@@ -534,7 +534,7 @@ northButton.addEventListener("click", function() {
         }
         updateCredits(-200);
         hasFakeCode = true;
-        addToInventory("Crumpled Note (Code: 1-2-3-4)");
+        addToInventory("Crumpled Note (Code: 9832)");
         addToLog("Paid 200 credits to the shady guy.");
         goToScene("after_fake_code");
     }
