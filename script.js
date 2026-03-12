@@ -111,12 +111,12 @@ const scenes = {
 
     corner_guy: {
         texts: [
-            "The figure leans close. Augmented eye looking at you",
-            "'I know the bank vault combination,' he rasps. 'Two hundred and it's yours.'",
+            "Mr. Gardner leans close. Augmented eye looking at you",
+            "'I know the bank vault combination,' he says. 'Two hundred and it's yours.'",
             "Do you trust him?"
         ],
         image:   "getadrink.jpeg",
-        tooltip: "Shady Character, He knows something",
+        tooltip: "He knows something",
         north:   "Give Him 200 Credits",
         south:   "Run Away",
         east:    null,
@@ -274,7 +274,7 @@ const scenes = {
         isEnding: true,
         endingType: "bad",
         texts: [
-            "You turn to leave. The shady figure watches you go.",
+            "You turn to leave. Mr. Gardner watches you go.",
             "A laser bolt hits you between the shoulder blades.",
             "GAME OVER: You should never have gone back. Shot in the back."
         ],
